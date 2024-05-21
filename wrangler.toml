@@ -1,0 +1,4 @@
+name = "disco-message-bot"
+compatibility_date = "2023-12-01"
+workers_dev = false
+vars = { ENVIRONMENT = "production" }
