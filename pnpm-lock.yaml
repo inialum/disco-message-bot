@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@hono/swagger-ui':
         specifier: ^0.2.2
-        version: 0.2.2(hono@4.3.9)
+        version: 0.2.2(hono@4.4.2)
       '@hono/zod-openapi':
         specifier: ^0.11.1
-        version: 0.11.1(hono@4.3.9)(zod@3.23.8)
+        version: 0.11.1(hono@4.4.2)(zod@3.23.8)
       hono:
-        specifier: ^4.3.9
-        version: 4.3.9
+        specifier: ^4.4.2
+        version: 4.4.2
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -1265,6 +1265,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   globals@13.24.0:
     resolution: {integrity: sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==}
@@ -1310,8 +1311,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hono@4.3.9:
-    resolution: {integrity: sha512-6c5LVE23HnIS8iBhY+XPmYJlPeeClznOi7mBNsAsJCgxo8Ciz75LTjqRUf5wv4RYq8kL+1KPLUZHCtKmbZssNg==}
+  hono@4.4.2:
+    resolution: {integrity: sha512-bRhZ+BM9r04lRN2i9wiZ18yQNbZxHsmmRIItoAb43nRkHnIDsFhFh4mJ0seEs06FvenibpAgSVNHQ8ZzcDQx2A==}
     engines: {node: '>=16.0.0'}
 
   html-escaper@2.0.2:
@@ -1345,6 +1346,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -1778,6 +1780,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup-plugin-inject@3.0.2:
@@ -2389,20 +2392,20 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@hono/swagger-ui@0.2.2(hono@4.3.9)':
+  '@hono/swagger-ui@0.2.2(hono@4.4.2)':
     dependencies:
-      hono: 4.3.9
+      hono: 4.4.2
 
-  '@hono/zod-openapi@0.11.1(hono@4.3.9)(zod@3.23.8)':
+  '@hono/zod-openapi@0.11.1(hono@4.4.2)(zod@3.23.8)':
     dependencies:
       '@asteasolutions/zod-to-openapi': 7.0.0(zod@3.23.8)
-      '@hono/zod-validator': 0.2.1(hono@4.3.9)(zod@3.23.8)
-      hono: 4.3.9
+      '@hono/zod-validator': 0.2.1(hono@4.4.2)(zod@3.23.8)
+      hono: 4.4.2
       zod: 3.23.8
 
-  '@hono/zod-validator@0.2.1(hono@4.3.9)(zod@3.23.8)':
+  '@hono/zod-validator@0.2.1(hono@4.4.2)(zod@3.23.8)':
     dependencies:
-      hono: 4.3.9
+      hono: 4.4.2
       zod: 3.23.8
 
   '@humanwhocodes/config-array@0.11.14':
@@ -3484,7 +3487,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono@4.3.9: {}
+  hono@4.4.2: {}
 
   html-escaper@2.0.2: {}
 
