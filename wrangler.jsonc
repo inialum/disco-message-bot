@@ -1,0 +1,12 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "disco-message-bot",
+	"compatibility_date": "2024-09-02",
+	"workers_dev": false,
+	"vars": {
+		"ENVIRONMENT": "production"
+	},
+	"observability": {
+		"enabled": true
+	}
+}
