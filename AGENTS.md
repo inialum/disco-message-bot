@@ -10,9 +10,10 @@ Standard setup, dev, test, and token commands are documented in `README.md`; wor
 
 Non-obvious caveats for running this repo in the Cursor Cloud VM (dependencies are already installed by the startup update script):
 
-- Toolchain: `packageManager` pins `pnpm@9.1.2`. Running `pnpm` inside the repo auto-resolves to 9.1.2 (pnpm self-manages / corepack), even though a newer global pnpm and Node 22 are on `PATH`. No `nvm use` needed.
-- Dev port: `pnpm run dev` starts `wrangler dev` on `:7071` (the `README.md` "port 7070" line is stale — trust `package.json`). Run it under a long-lived tmux session, not a one-shot foreground command.
+- Toolchain: Node is pinned by `.node-version` (24.11.1). `packageManager` pins `pnpm@10.6.1`. Running `pnpm` inside the repo auto-resolves to 10.6.1 (pnpm self-manages / corepack), even though a newer global pnpm and Node 22 are on `PATH`. No `nvm use` needed.
+- Dev port: `pnpm run dev` starts `wrangler dev` on `:7071`. Run it under a long-lived tmux session, not a one-shot foreground command.
 - Local vars (gitignored, required to run): copy `.dev.vars.example` to `.dev.vars` and fill: `ENVIRONMENT="local"`, `TOKEN_SECRET` (generate with `openssl rand -base64 32`), `DISCORD_WEBHOOK_URL`.
 - Auth for API testing: `/api/*` requires a `Bearer` JWT signed with `TOKEN_SECRET`. Generate one with `pnpm run create-token` (reads `TOKEN_SECRET` from `.dev.vars`). Requests without it return 401; invalid bodies return 400.
 - Webhook side effect: the welcome endpoint does a real `fetch(DISCORD_WEBHOOK_URL)`. Without a valid Discord webhook it returns 500. For local end-to-end verification, point `DISCORD_WEBHOOK_URL` at a local HTTP server that returns a 2xx (a 200/204 makes the endpoint return `{"status":"ok"}`).
-- The wrangler 3.x "out-of-date / update available" warning at startup is expected and non-blocking.
+- Lint/format: `pnpm lint` (`biome check`). Auto-fix: `pnpm fix`. Typecheck: `pnpm typecheck`. Tests: `pnpm test:ci` for a one-shot coverage run (`pnpm test` is watch mode).
+- Worker bindings types are generated with `pnpm typegen` (`wrangler types --env-interface CloudflareBindings --strict-vars false`) into `worker-configuration.d.ts`. Re-run after Wrangler config changes.

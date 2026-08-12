@@ -31,7 +31,7 @@ Discord message bot for INIALUM
    pnpm run dev
    ```
 
-   The service will be running on port 7070.
+   The service will be running on port 7071.
 
 ### Testing
 
