@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "wrangler dev src/index.ts --port 7071",
 		"deploy": "wrangler deploy --minify src/index.ts --keep-vars",
-		"create-token": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/createToken.ts",
+		"create-token": "inialum-token-generator --service-name inialum-disco-message-bot --env-file ./.dev.vars",
 		"lint": "biome check",
 		"fix": "biome check --write",
 		"test": "vitest",
@@ -23,12 +23,9 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.8",
-		"@types/jws": "^3.2.10",
+		"@inialum/token-generator": "^0.3.1",
 		"@vitest/coverage-v8": "^4.0.14",
 		"discord-api-types": "^0.38.34",
-		"dotenv": "^16.6.1",
-		"jws": "^4.0.0",
-		"tsx": "^4.23.12",
 		"typescript": "^5.9.3",
 		"vite": "^6.4.3",
 		"vitest": "^4.0.14",
