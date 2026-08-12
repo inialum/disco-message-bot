@@ -13,7 +13,7 @@ vi.mock('hono/adapter', () => {
 
 describe('API v1', () => {
 	beforeEach(() => {
-		vi.spyOn(global, 'fetch').mockResolvedValue(
+		vi.spyOn(globalThis, 'fetch').mockResolvedValue(
 			new Response(
 				JSON.stringify({
 					status: 'ok',
